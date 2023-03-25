@@ -12,11 +12,16 @@ public class AuthService {
         IntStream.range(1, 11).forEach(i -> memberRepository.add(new Member("username"+i, "password"+i)));
     }
 
-    private String logIn(String username, String password){
+    public String logIn(String username, String password){
+        System.out.println("사용자는 AuthService에게 로그인 요청을 보낸다. ");
         for(Member member : memberRepository){
             if(member.isRightUsername(username))
-                if(member.isRightPassword(password)) return "토큰";
+                if(member.isRightPassword(password)) {
+                    System.out.println("Member에게 받은 응답으로 Client에게 AuthService가 응답을 보낸다.");
+                    return "토큰";
+                }
         }
+        System.out.println("Member에게 받은 응답으로 Client에게 AuthService가 응답을 보낸다.");
         return "예외";
     }
 }
