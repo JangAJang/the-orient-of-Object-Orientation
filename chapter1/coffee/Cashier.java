@@ -5,10 +5,12 @@ public class Cashier {
     private final Coffees orders = new Coffees();
 
     public void getOrderFromCustomer(String order){
+        System.out.println(order+" 주문받았습니다!");
         orders.addNewCoffee(order);
     }
 
     public String tellBaristaToMakeCoffee(){
+        System.out.println("A : B씨! " + orders.getLatestCoffee() + "만들어주세요!");
         return orders.getLatestCoffee();
     }
 
@@ -17,6 +19,8 @@ public class Cashier {
     }
 
     public String giveCoffeeToCustomer(){
-        return orders.offerCoffee();
+        String coffee = orders.offerCoffee();
+        System.out.println("주문하신 "+coffee + "나왔습니다!");
+        return coffee;
     }
 }
