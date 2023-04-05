@@ -18,4 +18,9 @@ public class Coffees {
     public String getLatestCoffee(){
         return coffees.peek();
     }
+
+    public boolean isRightCoffee(String coffee){
+        if(coffees.isEmpty()) throw new IllegalArgumentException("등록된 커피가 없습니다.");
+        return coffees.peek().equals(coffee);
+    }
 }
