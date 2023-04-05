@@ -17,7 +17,7 @@ public class Customer {
         return coffee;
     }
 
-    public boolean checkMyCoffee(String coffeeGiven){
+    public boolean isMyCoffee(String coffeeGiven){
         return this.coffee.equals(coffeeGiven);
     }
 }
