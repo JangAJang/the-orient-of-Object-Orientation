@@ -14,4 +14,8 @@ public class Coffees {
     public String offerCoffee(){
         return coffees.poll();
     }
+
+    public String getLatestCoffee(){
+        return coffees.peek();
+    }
 }
