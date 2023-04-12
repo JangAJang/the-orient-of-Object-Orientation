@@ -13,12 +13,17 @@ public class Alice {
     }
 
     private void eatCake(){
-        cake.removePortion();
-        height *= 2;
+        if(cake.isLeft()){
+            cake.removePortion();
+            height *= 2;
+        }
     }
 
     private void drinkTea(){
-        height = 24;
+        if(tea.isLeft()){
+            height = 24;
+            tea.drunken();
+        }
     }
 
     private void useFan(){
