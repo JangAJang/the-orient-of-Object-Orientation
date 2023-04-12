@@ -58,7 +58,8 @@ public class View {
     }
 
     public void printStatus(Alice alice, Door door){
-        if(alice.tryToMove(door).equals(Place.GARDEN)){
+        alice.tryToMove(door);
+        if(alice.isAtGarden()){
             System.out.println("정원에 도착했습니다.");
             System.exit(0);
         }

@@ -10,6 +10,10 @@ public class Alice {
         place = Place.DOOR;
     }
 
+    public boolean isAtGarden(){
+        return place.equals(Place.GARDEN);
+    }
+
     public Place tryToMove(Door door){
         if(door.isTooSmall(height)){
             return place;
