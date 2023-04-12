@@ -3,16 +3,12 @@ package chapter2;
 public class Alice {
 
     private int height;
-    private Cake cake;
-    private Tea tea;
-    private Mushroom mushroom;
-    private Fan fan;
 
     public Alice() {
         this.height = 130;
     }
 
-    private void eatCake(){
+    private void eatCake(Cake cake){
         if(cake.isLeft()){
             cake.removePortion();
             height *= 2;
@@ -21,7 +17,7 @@ public class Alice {
         throw new IllegalArgumentException("케이크가 없습니다.");
     }
 
-    private void drinkTea(){
+    private void drinkTea(Tea tea){
         if(tea.isLeft()){
             height = 24;
             tea.drunken();
@@ -34,7 +30,7 @@ public class Alice {
         height -= 20;
     }
 
-    private void eatMushroomToBeTall(){
+    private void eatMushroomToBeTall(Mushroom mushroom){
         if(mushroom.isLeftLeft()){
             mushroom.leftEaten();
             height += 10;
@@ -43,7 +39,7 @@ public class Alice {
         throw new IllegalArgumentException("더 커지기 위해 먹을 버섯이 없습니다.");
     }
 
-    private void eatMushroomToBeSmall(){
+    private void eatMushroomToBeSmall(Mushroom mushroom){
         if(mushroom.isRightLeft()){
             mushroom.rightEaten();
             height -= 10;
