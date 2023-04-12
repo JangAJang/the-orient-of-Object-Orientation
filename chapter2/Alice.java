@@ -13,6 +13,7 @@ public class Alice {
     }
 
     private void eatCake(){
+        cake.removePortion();
         height *= 2;
     }
 
