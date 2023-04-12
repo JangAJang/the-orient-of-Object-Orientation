@@ -31,11 +31,16 @@ public class Alice {
     }
 
     private void eatMushroomToBeTall(){
-        height += 10;
+        if(mushroom.isLeftLeft()){
+            mushroom.leftEaten();
+            height += 10;
+        }
     }
 
     private void eatMushroomToBeSmall(){
-        height -= 10;
-
+        if(mushroom.isRightLeft()){
+            mushroom.rightEaten();
+            height -= 10;
+        }
     }
 }
