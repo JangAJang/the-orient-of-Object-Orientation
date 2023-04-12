@@ -2,10 +2,20 @@ package chapter2;
 
 public class Alice {
 
-    private int height;
+    private float height;
+    private Place place;
 
     public Alice() {
         this.height = 130;
+        place = Place.DOOR;
+    }
+
+    private void tryToMove(float door){
+        if(height > door){
+            System.out.println("아직 키가 커서 문을 통과할 수 없습니다.");
+            return;
+        }
+        place = Place.GARDEN;
     }
 
     private void eatCake(Cake cake){
@@ -19,7 +29,7 @@ public class Alice {
 
     private void drinkTea(Tea tea){
         if(tea.isLeft()){
-            height = 24;
+            height /= 2;
             tea.drunken();
             return;
         }
