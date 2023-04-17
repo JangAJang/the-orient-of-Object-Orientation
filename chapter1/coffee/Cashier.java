@@ -4,9 +4,10 @@ public class Cashier {
 
     private final Coffees orders = new Coffees();
 
-    public void getOrderFromCustomer(String order){
-        System.out.println(order+" 주문받았습니다!");
-        orders.addNewCoffee(order);
+    public void getOrderFromCustomer(Customer customer){
+        String coffee = customer.tellCoffee();
+        System.out.println(coffee+" 주문받았습니다!");
+        orders.addNewCoffee(coffee);
     }
 
     public String tellBaristaToMakeCoffee(){
@@ -14,7 +15,8 @@ public class Cashier {
         return orders.getLatestCoffee();
     }
 
-    public void getCoffeeFromBarista(String coffee){
+    public void getCoffeeFromBarista(Barista barista){
+        String coffee = barista.giveCoffeeMade();
         if(!orders.isRightCoffee(coffee)) throw new IllegalArgumentException("커피 잘못만들었잖아!");
     }
 

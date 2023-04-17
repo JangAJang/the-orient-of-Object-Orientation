@@ -17,7 +17,11 @@ public class Customer {
         return coffee;
     }
 
-    public boolean isMyCoffee(String coffeeGiven){
-        return this.coffee.equals(coffeeGiven);
+    public void getCoffee(Cashier cashier){
+        if(coffee.equals(cashier.giveCoffeeToCustomer())) {
+            System.out.println("제 커피 맞네요 감사합니다.");
+            return;
+        }
+        throw new IllegalArgumentException("제 커피가 아닙니다.");
     }
 }
