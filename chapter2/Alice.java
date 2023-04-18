@@ -14,11 +14,11 @@ public class Alice {
         return place.equals(Place.GARDEN);
     }
 
-    public Place tryToMove(Door door){
+    public void tryToMove(Door door){
         if(door.isTooSmall(height)){
-            return place;
+            return;
         }
-        return place = Place.GARDEN;
+        place = Place.GARDEN;
     }
 
     public void eatCake(Cake cake){
