@@ -12,7 +12,7 @@ public class Cake {
         portions--;
     }
 
-    public boolean isLeft(){
-        return portions > 0;
+    public boolean isEmpty(){
+        return portions <= 0;
     }
 }

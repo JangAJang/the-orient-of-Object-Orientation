@@ -10,12 +10,12 @@ public class Mushroom {
         this.rightBites = totalBites/2;
     }
 
-    public boolean isLeftLeft(){
-        return leftBites>0;
+    public boolean isLeftSideEmpty(){
+        return leftBites <=0;
     }
 
-    public boolean isRightLeft(){
-        return rightBites>0;
+    public boolean isRightSideEmpty(){
+        return rightBites <= 0;
     }
 
     public void leftEaten(){

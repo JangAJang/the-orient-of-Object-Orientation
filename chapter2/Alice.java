@@ -22,7 +22,7 @@ public class Alice {
     }
 
     public void eatCake(Cake cake){
-        if(!cake.isLeft()){
+        if(cake.isEmpty()){
             throw new IllegalArgumentException("케이크가 없습니다.");
         }
         cake.removePortion();
@@ -30,7 +30,7 @@ public class Alice {
     }
 
     public void drinkTea(Tea tea){
-        if(!tea.isLeft()){
+        if(!tea.isEmpty()){
             throw new IllegalArgumentException("차가 없습니다.");
         }
         height /= 2;
@@ -42,7 +42,7 @@ public class Alice {
     }
 
     public void eatMushroomToBeTall(Mushroom mushroom){
-        if(mushroom.isLeftLeft()){
+        if(mushroom.isLeftSideEmpty()){
             throw new IllegalArgumentException("더 커지기 위해 먹을 버섯이 없습니다.");
         }
         mushroom.leftEaten();
@@ -50,7 +50,7 @@ public class Alice {
     }
 
     public void eatMushroomToBeSmall(Mushroom mushroom){
-        if(mushroom.isRightLeft()){
+        if(mushroom.isRightSideEmpty()){
             throw new IllegalArgumentException("더 작아지기 위해 먹을 버섯이 없습니다.");
         }
         mushroom.rightEaten();
