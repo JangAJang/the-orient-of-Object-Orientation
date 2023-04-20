@@ -8,8 +8,8 @@ public class Tea {
         this.liters = liters;
     }
 
-    public boolean isLeft(){
-        return liters > 0;
+    public boolean isEmpty(){
+        return liters <= 0;
     }
 
     public void drunken(){
