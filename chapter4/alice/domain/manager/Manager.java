@@ -1,6 +1,6 @@
-package chapter4.alice.manager;
+package chapter4.alice.domain.manager;
 
-import chapter4.alice.witness.Witness;
+import chapter4.alice.domain.witness.Witness;
 
 import java.util.List;
 

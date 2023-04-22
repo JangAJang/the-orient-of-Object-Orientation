@@ -1,10 +1,10 @@
-package chapter4.alice.witness;
+package chapter4.alice.domain.witness;
 
-public class Cook implements Witness{
+public class MadHatter implements Witness{
 
     private final String testimony;
 
-    public Cook(String testimony) {
+    public MadHatter(String testimony) {
         this.testimony = testimony;
     }
 
@@ -15,6 +15,6 @@ public class Cook implements Witness{
 
     @Override
     public String getName() {
-        return "요리사";
+        return "모자장수";
     }
 }
