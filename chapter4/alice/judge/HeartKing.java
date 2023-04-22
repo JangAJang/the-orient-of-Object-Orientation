@@ -8,7 +8,7 @@ import java.util.List;
 
 public class HeartKing implements Judge{
 
-    private final List<String> usefulTestimonies = new ArrayList<>();
+    private final List<Witness> valuableWitness = new ArrayList<>();
 
     @Override
     public void startCourt() {
@@ -25,7 +25,7 @@ public class HeartKing implements Judge{
         System.out.println("증인은 증언을 시작하라.");
         String testimony = witness.tellWhatTheyKnow();
         if(testimony.contains("하트 잭")){
-            usefulTestimonies.add(testimony);
+            valuableWitness.add(witness);
             System.out.println("쓸만한 정보구나.");
             return;
         }
@@ -33,8 +33,8 @@ public class HeartKing implements Judge{
     }
 
     public void checkUsefulTestimonies(){
-        for(String testimony : usefulTestimonies){
-            System.out.println(testimony);
+        for(Witness testimony : valuableWitness){
+            System.out.println(testimony.getName() + " : " + testimony.tellWhatTheyKnow());
         }
     }
 }
