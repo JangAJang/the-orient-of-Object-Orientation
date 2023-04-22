@@ -1,0 +1,40 @@
+package chapter4.alice.judge;
+
+import chapter4.alice.manager.Manager;
+import chapter4.alice.witness.Witness;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class HeartKing implements Judge{
+
+    private final List<String> usefulTestimonies = new ArrayList<>();
+
+    @Override
+    public void startCourt() {
+        System.out.println("이제부터 재판을 시작하겠다.");
+    }
+
+    @Override
+    public Witness callNextWitness(Manager manager, List<Witness> witnesses) {
+        return manager.moveNextWitness(witnesses);
+    }
+
+    @Override
+    public void startTestimony(Witness witness) {
+        System.out.println("증인은 증언을 시작하라.");
+        String testimony = witness.tellWhatTheyKnow();
+        if(testimony.contains("하트 잭")){
+            usefulTestimonies.add(testimony);
+            System.out.println("쓸만한 정보구나.");
+            return;
+        }
+        System.out.println("쓸모없는 정보구나.");
+    }
+
+    public void checkUsefulTestimonies(){
+        for(String testimony : usefulTestimonies){
+            System.out.println(testimony);
+        }
+    }
+}
