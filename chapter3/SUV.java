@@ -13,7 +13,6 @@ public class SUV extends Vehicle {
     @Override
     public void move() {
         location += 1;
-        location--;
     }
 
     @Override

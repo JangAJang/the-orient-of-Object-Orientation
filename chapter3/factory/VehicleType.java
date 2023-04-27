@@ -1,8 +1,6 @@
 package chapter3.factory;
 
-import chapter3.Car;
-import chapter3.RacingCar;
-import chapter3.Vehicle;
+import java.util.Arrays;
 
 public enum VehicleType {
 
@@ -16,5 +14,9 @@ public enum VehicleType {
 
     public boolean isType(String input){
         return this.input.equals(input);
+    }
+
+    public static VehicleType getType(String message) throws IllegalAccessException {
+        return Arrays.stream(values()).filter(i -> i.isType(message)).findFirst().orElseThrow(IllegalAccessException::new);
     }
 }

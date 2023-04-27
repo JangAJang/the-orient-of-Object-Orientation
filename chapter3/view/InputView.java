@@ -40,14 +40,12 @@ public class InputView {
     public VehicleType getVehicleType() throws IOException{
         System.out.print("자동차의 종류를 입력해주세요 (승용차 / SUV / 레이싱카) : ");
         String input = br.readLine();
-        if(CAR.isType(input))
-            return CAR;
-        if(SUV.isType(input))
-            return SUV;
-        if(RACING_CAR.isType(input))
-            return RACING_CAR;
-        System.out.println("잘못된 종류입니다.");
-        return getVehicleType();
+        try{
+            return VehicleType.getType(input);
+        } catch (Exception e){
+            System.out.println("잘못된 종류입니다.");
+            return getVehicleType();
+        }
     }
 
     public String[] getCarInfo(List<String> names, int end) throws IOException {
