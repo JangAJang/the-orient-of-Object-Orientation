@@ -1,5 +1,9 @@
 package chapter2;
 
+import chapter2.item.Cake;
+import chapter2.item.Mushroom;
+import chapter2.item.Tea;
+
 public class Alice {
 
     private float height;
@@ -22,11 +26,7 @@ public class Alice {
     }
 
     public void eatCake(Cake cake){
-        if(cake.isEmpty()){
-            throw new IllegalArgumentException("케이크가 없습니다.");
-        }
-        cake.removePortion();
-        height *= 2;
+        height = cake.itemUsed(height);
     }
 
     public void drinkTea(Tea tea){

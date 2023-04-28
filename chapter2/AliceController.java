@@ -1,5 +1,9 @@
 package chapter2;
 
+import chapter2.item.Cake;
+import chapter2.item.Mushroom;
+import chapter2.item.Tea;
+
 import java.io.IOException;
 
 public class AliceController {
