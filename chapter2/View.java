@@ -1,5 +1,9 @@
 package chapter2;
 
+import chapter2.item.Cake;
+import chapter2.item.Mushroom;
+import chapter2.item.Tea;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
