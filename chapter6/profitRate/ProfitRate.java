@@ -1,2 +1,6 @@
-package chapter6.profitRate;public class ProfitRate {
+package chapter6.profitRate;
+
+public interface ProfitRate {
+
+    long calculateProfit(long money);
 }
