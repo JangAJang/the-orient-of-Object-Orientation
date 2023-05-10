@@ -20,6 +20,10 @@ public enum Place {
         return testimony.contains(this.message);
     }
 
+    public String getMessage() {
+        return message;
+    }
+
     public Place getPlace(String message){
         return Arrays.stream(Place.values()).filter(i-> i.isRightMessage(message)).findFirst()
                 .orElseThrow(()-> new IllegalArgumentException("해당 장소를 입력받을 수 없습니다."));

@@ -30,7 +30,7 @@ public class HeartKing implements Judge{
     @Override
     public void startTestimony(Witness witness) {
         System.out.println("증인은 증언을 시작하라.");
-        String testimony = witness.tellWhatTheyKnow();
+        String testimony = witness.tellWhatTheyKnow(time, place);
         if(testimony.contains("하트 잭")){
             valuableWitness.add(witness);
             System.out.println("쓸만한 정보구나.");
@@ -41,7 +41,7 @@ public class HeartKing implements Judge{
 
     public void checkUsefulTestimonies(){
         for(Witness testimony : valuableWitness){
-            System.out.println(testimony.getName() + " : " + testimony.tellWhatTheyKnow());
+            System.out.println(testimony.getName() + " : " + testimony.tellWhatTheyKnow(time, place));
         }
     }
 }

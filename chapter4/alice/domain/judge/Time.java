@@ -19,6 +19,10 @@ public enum Time {
         return testimony.contains(this.message);
     }
 
+    public String getMessage() {
+        return message;
+    }
+
     public Time getTime(String message){
         return Arrays.stream(Time.values()).filter(i -> i.isRightMessage(message)).findFirst()
                 .orElseThrow(()-> new IllegalArgumentException("해당 시간대를 입력받을 수 없습니다."));
