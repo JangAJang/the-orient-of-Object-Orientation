@@ -9,6 +9,13 @@ import java.util.List;
 public class HeartKing implements Judge{
 
     private final List<Witness> valuableWitness = new ArrayList<>();
+    private final Time time;
+    private final Place place;
+
+    public HeartKing(Time time, Place place) {
+        this.time = time;
+        this.place = place;
+    }
 
     @Override
     public void startCourt() {
